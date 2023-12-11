@@ -19,7 +19,9 @@ function App() {
       <Header />
       <main>
         <ConfigureCounter onSet={handleSetCount}/>
-        <Counter initialCount={chosenCount} />
+
+        {/* when chosenCount is changed the counter function will re-execute. Alternatively you can do this using useEffect, but useEffect executes a component function twice. This is more efficient.*/}
+        <Counter key={chosenCount} initialCount={chosenCount} /> 
         <Counter initialCount={chosenCount} />
       </main>
     </>
